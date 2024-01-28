@@ -1,0 +1,89 @@
+
+/*************************************************************************************************************************************************************************************************************************************************************
+
+"userChrome.css" is a custom CSS file that can be used to specify CSS style rules for Floorp's interface (NOT internal site) using "chrome" privileges.
+For instance, if you want to hide the tab bar, you can use the following CSS rule:
+
+**************************************
+#TabsToolbar {                       *
+    display: none !important;        *
+}                                    *
+**************************************
+
+NOTE: You can use the userChrome.css file without change preferences (about:config)
+
+Quote: https://userChrome.org | https://github.com/topics/userchrome 
+
+************************************************************************************************************************************************************************************************************************************************************/
+
+@charset "UTF-8";
+@-moz-document url(chrome://browser/content/browser.xhtml) {
+/* Please write your custom CSS under this line*/
+  #nav-bar {
+    background: none !important;
+  }
+  #urlbar-background, #searchbar {
+    background: none !important;
+    border: none !important;
+  }
+  #urlbar:is([focused="true"], [open])>#urlbar-background, #searchbar:focus-within {
+    background-color: rgb(32, 31, 31) !important;
+  }
+  .browser-toolbar:not(.titlebar-color) {
+    background: none !important;
+  }
+  #navigator-toolbox, #navigator-toolbox-background {
+    border-bottom: none !important;
+  }
+  #sidebar-select-box {
+    background: none !important;
+  }
+  #browser {
+    background: none !important;
+  }
+  #sidebar-select-box {
+    border-left: 0 !important;
+    border-right: 0 !important;
+  }
+  .browser-sidebar2 {
+    background: none !important;
+    border: none !important;
+  }
+  #TabsToolbar {
+	  background: none !important;
+	  border: none !important;
+  }
+  #identity-icon-box {
+    background: none !important;
+    border: none !important;
+  }
+  #verticaltab-splitter {
+    background: none !important;
+    border: none !important;
+  }
+  /* #appcontent {
+    margin-top: 4px;
+  } */
+  .tab-background {
+    background-color: rgba(0, 0, 0, 0.2);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-image: none;
+    background-size: auto;
+    background-origin: padding-box;
+    background-clip: border-box;
+  }
+  #TabsToolbar #firefox-view-button[open] > .toolbarbutton-icon:-moz-lwtheme, #tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[multiselected="true"]:-moz-lwtheme, #tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]:-moz-lwtheme {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-image: none !important;
+    background-size: auto;
+    background-origin: padding-box;
+    background-clip: border-box;
+  }
+}
